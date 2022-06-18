@@ -17,4 +17,4 @@ cp dependences/ospl.xml /opt/OpenSplice/HDE/x86_64.linux/etc/config/ospl.xml
 # Copiando variáveis de ambiente
 cp dependences/opensplice.sh /etc/profile.d/opensplice.sh
 
-Echo "Reinicie o sistema"
+echo "Reinicie o sistema"
