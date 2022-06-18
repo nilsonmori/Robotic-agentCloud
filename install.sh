@@ -19,8 +19,9 @@ cp dependences/ospl.xml /opt/OpenSplice/HDE/x86_64.linux/etc/config/ospl.xml
 cp dependences/opensplice.sh /etc/profile.d/opensplice.sh
 
 # habilitando serviço
-ln -s /opt/Robotic-agentCloud/OpenSplice/contextNet.service /etc/systemd/system/contextNet.service
-systemctl enable contextNet
+ln -s /opt/Robotic-agentCloud/OpenSplice/contextNet.sh /usr/bin
+
+
 
 
 
