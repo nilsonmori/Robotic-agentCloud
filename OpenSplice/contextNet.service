@@ -7,7 +7,7 @@ Type=simple
 Restart=always
 RestartSec=1
 User=root
-ExecStart=java -jar /opt/Robotic-agentCloud/OpenSplice/contextnet-2.7-eSMA.jar 127.0.0.1 5500 OpenSplice &
+ExecStart=/opt/Robotic-agentCloud/OpenSplice/contextNet.sh
 
 [Install]
 WantedBy=multi-user.target
