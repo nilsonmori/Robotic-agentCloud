@@ -1,5 +1,11 @@
 #! /bin/sh
 
+## Instalando o OpenJDK
+apt update
+apt install openjdk-11-jre
+
+
+## Configurando o Ambiente
 LOCAL=`pwd`
 OPENSPLICEGit='/OpenSplice/HDE'
 OPENSPLICELOCAL='/opt/OpenSplice'
@@ -18,3 +24,11 @@ cp dependences/ospl.xml /opt/OpenSplice/HDE/x86_64.linux/etc/config/ospl.xml
 cp dependences/opensplice.sh /etc/profile.d/opensplice.sh
 
 echo "Reinicie o sistema"
+
+#
+ln -s /opt/Robotic-agentCloud/OpenSplice/contextNet.service /etc/systemd/system/contextNet.service
+systemctl enable contextNet
+
+
+
+
