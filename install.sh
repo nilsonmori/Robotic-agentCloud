@@ -1,25 +1,31 @@
 #! /bin/sh
 
-## Configurando o Ambiente
+echo "Configurando o Ambiente........................................"
 LOCAL=`pwd`
 OPENSPLICEGit='/OpenSplice/HDE'
 OPENSPLICELOCAL='/opt/OpenSplice'
 
-#Criando diretório no /opt para o OpenSplice
+echo "Criando diretório no /opt para o OpenSplice..................."
 mkdir -p $OPENSPLICELOCAL
 
-# Adicionando Link Simbólico para o local de download do OpenSplice
-ln -s $LOCAL$OPENSPLICEGit $OPENSPLICELOCAL'/HDE'  
+echo "Adicionando Link Simbólico para o OpenSplice................."
+ln -s $LOCAL$OPENSPLICEGit $OPENSPLICELOCAL'/HDE'
 
-# Alterando arquivo ospl.xml original para o distribuído pela ContextNet
+echo "Alterando arquivo ospl.xml para o distribuído pela ContextNet"
 mv /opt/OpenSplice/HDE/x86_64.linux/etc/config/ospl.xml /opt/OpenSplice/HDE/x86_64.linux/etc/config/ospl.xml.OLD
 cp dependences/ospl.xml /opt/OpenSplice/HDE/x86_64.linux/etc/config/ospl.xml
 
-# Copiando variáveis de ambiente
+echo "Copiando variáveis de ambiente ............................."
 cp dependences/opensplice.sh /etc/profile.d/opensplice.sh
 
-# habilitando serviço
+echo "Habilitando script de inicialização ......................."
 ln -s /opt/Robotic-agentCloud/OpenSplice/contextNet.sh /usr/bin
+
+echo "Reinicie o sistema"
+
+echo ""
+
+echo "após reiniciar execute: contextNet.sh"
 
 
 
